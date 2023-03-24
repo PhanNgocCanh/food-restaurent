@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{client/layout/layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <section class="product-details-secton section-space-pt">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Product Details Left -->
+                        <div class="product-details-left">
+                            <div class="product-details-images slider-lg-image-1">
+                                <div class="lg-image">
+                                    <a href="#" class="img-poppu" style="width:100%"><img th:src="@{/images/product-image-1-2.jpg}" alt="product image" style="width:100%;"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Product Details Left -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product-details-view-content">Xoài xanh</h3>                         
+                            <p class="product-details-view-desc">Thành phần</p>
+                            <div class="price-box">                              
+                                    <span class="new-price">100 VNĐ</span>–
+                                    <span class="old-price">200 VNĐ</span>                              
+                                    <span class="new-price">200 VND</span>
+                           
+                            </div>
+                            <div class="product-vareant">
+                                <div class="pa_size">
+                                    <label class="pa_size_label">Đơn vị tính</label>
+                                    <span class="packet-swatch-vareant active swatch-1-kg" data-value="1-kg">Đơn vị tính</span>
+                                </div>
+                                <div class="packet-swatch-vareant-price"></div>
+                                <div class="stock in-stock">Còn hàng</div>
+                            </div>
+
+                            <div class="single-add-to-cart">
+                                <form action="#" class="cart-quantity d-flex">                                   
+                                    <button class="add-to-cart btn btn--primary md-2" type="submit">Thêm vào giỏ hàng</button>
+                                </form>
+                            </div>
+                            <div class="share-product-socail-area">
+                                <p>Chia sẻ:</p>
+                                <ul class="single-product-share">
+                                    <li><a href="#"><i class="icon-rt-4-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="icon-rt-logo-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="icon-rt-logo-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-description  pt-4">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-3">
+                            <div class="product-details-tab border-bottom-0 mt-md-4">
+                                <ul role="tablist" class="nav justify-content-start">
+                                    <li class="mb-3" role="presentation">
+                                        <a data-bs-toggle="tab" role="tab" href="#additional-information">Thông tin thêm</a>
+                                    </li>
+                                    <li class="mb-3" role="presentation">
+                                        <a data-bs-toggle="tab" role="tab" href="#reviews">Đánh giá</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-ld-9">
+                            <div class="product_details_tab_content tab-content">                              
+                                <!-- Start Single Content -->
+                                <div class="product_tab_content tab-pane" id="additional-information" role="tabpanel">
+                                    <div class="product_additional-information mt-30">
+                                        <table class="product-attributes_table">
+                                            <tbody>                                            
+                                                <tr>
+                                                    <th class="product-attributes-item__label">Thành phần</th>
+                                                    <td class="product-attributes-item__value">
+                                                        <p>đssd</p>
+                                                    </td>
+                                                </tr>                                             
+                                                <tr>
+                                                    <th class="product-attributes-item__label">Xuất xứ</th>
+                                                    <td class="product-attributes-item__value">
+                                                        <p>sffd</p>
+                                                    </td>
+                                                </tr>                                       
+                                                <tr>
+                                                    <th class="product-attributes-item__label">Bảo quản</th>
+                                                    <td class="product-attributes-item__value">
+                                                        <p>Bảo quản nơi khô ráo, thoáng mát</p>
+                                                    </td>
+                                                </tr>                                             
+                                                <tr>
+                                                    <th class="product-attributes-item__label">Hướng dẫn sử dụng</th>
+                                                    <td class="product-attributes-item__value">
+                                                        <p>sdffd</p>
+                                                    </td>
+                                                </tr>                                           
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- End Single Content -->
+                                <!-- Start Single Content -->
+                                <div class="product_tab_content tab-pane" id="reviews" role="tabpanel">
+                                    <div class="review_address_inner mt-30">
+                                        <!-- Start Single Review -->
+                                        <div class="pro_review">
+                                            <div class="review_thumb">
+                                                <img alt="review images" th:src="@{/clients/assets/images/others/reviewer.jpg}">
+                                            </div>
+                                            <div class="review_details">
+                                                <div class="review_info mb-10">
+                                                    <h5><span class="user-name">mix83</span> - <span class="comment-date"> 09/09/2022</span></h5>
+
+                                                </div>
+                                                <p class="reviewer-text">Sản phẩm phẩm tuyệt vời .</p>
+                                            </div>
+                                        </div>
+                                        <!-- End Single Review -->
+                                        <!-- Start Single Review -->
+                                        <div class="pro_review">
+                                            <div class="review_thumb">
+                                                <img alt="review images" th:src="@{/clients/assets/images/others/reviewer.jpg}">
+                                            </div>
+                                            <div class="review_details">
+                                                <div class="review_info mb-10">
+                                                    <h5> <span class="user-name">abc </span> - <span class="comment-date"> 12/10/2022</span></h5>
+
+                                                </div>
+                                                <p class="reviewer-text">Chất lượng quá tốt.</p>
+                                            </div>
+                                        </div>
+                                        <!-- End Single Review -->
+                                    </div>
+                                    <!-- Start RAting Area -->
+                                    <div class="rating_wrap mt-50">
+                                        <h5 class="rating-title-1">Thêm đánh giá của bạn</h5>                                                     
+                                    </div>
+                                    <!-- End RAting Area -->
+                                    <div class="comments-area comments-reply-area">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <form action="#" class="comment-form-area">                                              
+                                                    <div class="comment-form-comment mt-3">
+                                                        <label>Bình luận ( * Bạn phải đăng nhập và đã từng mua hàng)</label>
+                                                        <textarea class="comment-notes" required="required"></textarea>
+                                                    </div>
+                                                    <div class="comment-form-submit mt-3">
+                                                        <input type="submit" value="Gửi đi" class="comment-submit">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="product-item-section section-space-pb pt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 position-relative">
+                        <div class="section-title-wrap">
+                            <h2 class="section-title">
+                                Sản phẩm liên quan
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-slider-active product-border-box">                   
+                            <div class="single-product-item">
+                                <div class="single-product-item-image">
+                                    <a href="#" class="prodcut-images">
+                                        <img class="primary-image" th:src="@{/images/product-image-1-2.jpg}" alt="">
+                                    </a>
+                                    <ul class="single-product-item-action">
+                                        <li class="single-product-item-action-list">
+                                            <a href="" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick-view-modal" class="single-product-item-action-link"><i class="icon-rt-eye2"></i></a>
+                                        </li> 
+                                        <li class="single-product-item-action-list product-cart">
+                                            <a href="#" class="single-product-item-action-link"><i class="icon-rt-basket-outline"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="single-product-item-content">                                   
+                                    <h6 class="single-product-item-title mt-3"><a href="#">Xoài xanh</a></h6>
+                                    <div class="single-product-item-price d-flex">                                       
+                                            <p class="price">100 VND</p>
+                                            <p class="price-sale ms-3">200 VND</p>                                       
+                                    </div>                                  
+                                </div>                                   
+                                        <div class="percent-sale">5%</div>                                  
+                            </div>                
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

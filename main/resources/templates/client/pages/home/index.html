@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{client/layout/layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <section class="hero-slider-one-active">
+            <div class="single-hero-slider hero-slider-one">
+                <a href="#" class="hero-slider-bg-image">
+                    <img th:src="@{/clients/assets/images/hero/slider1_mixy1.webp}" alt="">
+                </a>
+                <div class="container">
+                    <div class="single-hero-slider-inner">
+                        <h5 class="sub-title">100% Thực phẩm hữu cơ</h5>
+                        <h1 class="title">Thực phẩm hữu cơ tươi ngon</h1>
+                        <h3 class="hero-price">
+                            Giá chỉ <b> 18.000VND</b>
+                        </h3>
+                        <a class="slideshow-button" href="#">Mua ngay <i class="icon-rt-arrow-right-solid"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-slider hero-slider-one">
+                <a href="#" class="hero-slider-bg-image">
+                    <img th:src="@{/clients/assets/images/hero/slider2_mixy1.webp}" alt="">
+                </a>
+                <div class="container">
+                    <div class="single-hero-slider-inner">
+                        <h5 class="sub-title">100% Thực phẩm hữu cơ</h5>
+                        <h1 class="title">Thực phẩm hữu cơ tươi ngon</h1>
+                        <h3 class="hero-price">
+                            Giá chỉ <b> 18.000VND</b>
+                        </h3>
+                        <a class="slideshow-button" href="#">Mua ngay <i class="icon-rt-arrow-right-solid"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            </section>
+                <!-- Slider Main End -->
+
+        <!-- Banner Section Start -->
+            <div class="banner-section section-space-ptb">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <a href="shop.html" class="single-banner-area">
+                                <div class="single-benner-image">
+                                    <img th:src="@{/clients/assets/images/banners/img1_banner1_mixy1.webp}" alt="">
+                                </div>
+                                <div class="banner-content">
+                                    <h2 class="banner-title">Bánh chocopice</h2>
+                                    <h2 class="banner-title2">Thơm ngon bổ dưỡng</h2>
+                                    <h2 class="banner-offer">
+                                        Giảm ngay 20%
+                                    </h2>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <a href="shop.html" class="single-banner-area sm-mt-30">
+                                <div class="single-benner-image">
+                                    <img th:src="@{/clients/assets/images/banners/img1_banner1_mixy2.webp}" alt="">
+                                </div>
+                                <div class="banner-content">
+                                    <h2 class="banner-title">Bánh chocopice</h2>
+                                    <h2 class="banner-title2">Thơm ngon bổ dưỡng</h2>
+                                    <h2 class="banner-offer">
+                                        Giảm ngay 20%
+                                    </h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Banner Section End -->
+
+            <section class="product-item-section pb-5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 position-relative">
+                                    <div class="section-title-wrap">
+                                        <h2 class="section-title">
+                                            Sản phẩm trong cửa hàng
+                                        </h2>
+                                        <p>Các sản phẩm đang giảm giá mua ngay để có được những sản phẩm với giá tốt nhất!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-slider-active product-border-box">  
+
+                                        <div th:each="item:${listProduct}" th:if="${item.quantity>0}" class="single-product-item">
+                                            <div class="single-product-item-image">
+                                                <a href="#" class="prodcut-images">
+                                                    <img class="primary-image" th:src="'/images/'+${item.image}" alt="">
+                                                </a>
+                                                <ul class="single-product-item-action">
+                                                    <li class="single-product-item-action-list">
+                                                        <a href="" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick-view-modal" class="single-product-item-action-link"><i class="icon-rt-eye2"></i></a>
+                                                    </li> 
+                                                    <li class="single-product-item-action-list product-cart">
+                                                        <a th:href="@{/add-cart/{productCode}(productCode=${item.productCode})}" class="single-product-item-action-link"><i class="icon-rt-basket-outline"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="single-product-item-content">    
+                                                    <div class="single-product-item-rating">
+                                                                <i class="icon-rt-star-solid select-star"></i>
+                                                                <i class="icon-rt-star-solid select-star"></i>
+                                                                <i class="icon-rt-star-solid select-star"></i>
+                                                                <i class="icon-rt-star-solid select-star"></i>
+                                                                <i class="icon-rt-star-solid"></i>
+                                                    </div>                               
+                                                <h6 class="single-product-item-title mt-3"><a href="#">[[${item.productName}]]</a></h6>
+                                                <div class="single-product-item-price d-flex" th:if="${item.discount>0}">
+                                                    <p class="price">[[${item.price-item.price*item.discount/100}]] VND</p>
+                                                    <p class="price-sale ms-3">[[${item.price}]] VND</p>
+                                                </div>
+                                                <div class="single-product-item-price d-flex" th:unless="${item.discount>0}">
+                                                    <p class="price">[[${item.price}]] VND</p>                                                   
+                                                </div>                                  
+                                            </div>
+                                            <div th:if="${item.discount>0}" class="percent-sale">[[${item.discount}]]%</div>
+                                        </div>                                         
+                            </div>
+                        </div>
+            </section>
+            <input th:if="${status}" type="hidden" id="check-out-success" th:value="${status}">
+    </div>
+    <script layout:fragment="script">            
+        $(document).ready(function(){
+            if(typeof $('#check-out-success').val() !=="undefined"){
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: $('#check-out-success').val(),
+                    showConfirmButton: false,
+                    timer: 1500
+                }) 
+            }
+        })
+    </script>
+</body>
+</html>

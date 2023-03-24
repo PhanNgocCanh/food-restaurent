@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymealeaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{client/layout/layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <section class="page-secton-wrapper section-space-ptb">
+            <div class="container">
+                <div class="row gx-5 mx-auto justify-content-center">
+                    <div class="col-md-6">
+                        <div class="title mb-3">
+                            <h2 class="fw-bold">Đăng ký</h2>
+                        </div>
+                        <div class="content-modal-box  p-5 border">
+                            <form action="#" class="account-form-box" th:action="@{/register}" th:object="${account}" method="POST">                             
+                                <div class="single-input">
+                                    <label for="reg_username">Tên người dùng *</label>
+                                    <input type="text" th:field="*{fullName}" id="reg_username" value="">                                    
+                                    <p class="message" style="color:red;font-size:12px;margin-bottom:0;" 
+                                th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></p>                                             
+                                </div>
+                                <div class="single-input">
+                                    <label for="reg_email">Email *</label>
+                                    <input type="email" th:field="*{email}" id="reg_email" value="">
+                                    <p class="message" style="color:red;font-size:12px;margin-bottom:0;" 
+                                th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>  
+                                </div>
+                                <div class="single-input">
+                                    <label for="reg_password">Mật khẩu *</label>
+                                    <input type="password" th:field="*{password}" id="reg_password" value="">
+                                    <p class="message" style="color:red;font-size:12px;margin-bottom:0;" 
+                                th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>  
+                                </div>
+                                <div class="single-input">
+                                    <label for="reg_password_re">Xác nhận mật khẩu *</label>
+                                    <input type="password" th:field="*{passwordReEnter}" id="reg_password_re">                                   
+                                   <p class="message" style="color:red;font-size:12px;margin-bottom:0;" 
+                                th:if="${#fields.hasErrors('passwordReEnter')}" th:errors="*{passwordReEnter}"></p>  
+                                </div> 
+                                <div class="button-box mt-4">
+                                    <button class="btn btn--primary" type="submit">Đăng ký</button>
+                                </div>                                           
+                                </div>                               
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
